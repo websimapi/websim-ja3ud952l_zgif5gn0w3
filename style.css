@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,28 +7,30 @@
 }
 
 body {
-    font-family: 'Space Mono', monospace;
-    background: #000;
-    color: #fff;
-    line-height: 1.6;
+    font-family: 'Noto Sans', sans-serif;
+    background: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.7;
     display: flex;
     min-height: 100vh;
 }
 
 .sidebar {
-    width: 250px;
-    background: #111;
-    padding: 2rem 1rem;
-    border-right: 1px solid #333;
+    width: 280px;
+    background: #fafafa;
+    padding: 3rem 1.5rem;
+    border-right: 1px solid #e5e5e5;
     position: fixed;
     height: 100vh;
     overflow-y: auto;
 }
 
 .sidebar h1 {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    color: #1a1a1a;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .sidebar ul {
@@ -34,39 +38,40 @@ body {
 }
 
 .sidebar li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .nav-link {
-    color: #888;
+    color: #666;
     text-decoration: none;
     display: block;
-    padding: 0.5rem;
-    border-radius: 4px;
-    transition: all 0.2s;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    transition: all 0.15s ease;
     font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .nav-link:hover {
-    background: #222;
-    color: #fff;
+    background: #f0f0f0;
+    color: #1a1a1a;
 }
 
 .nav-link.active {
-    background: #fff;
-    color: #000;
+    background: #1a1a1a;
+    color: #ffffff;
 }
 
 .content {
-    margin-left: 250px;
-    padding: 2rem;
-    max-width: 900px;
+    margin-left: 280px;
+    padding: 3rem 4rem;
+    max-width: 1000px;
     width: 100%;
 }
 
 .section {
     display: none;
-    animation: fadeIn 0.3s;
+    animation: fadeIn 0.25s ease;
 }
 
 .section.active {
@@ -74,65 +79,75 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
+    from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: #1a1a1a;
+    font-weight: 700;
+    letter-spacing: -0.03em;
 }
 
 h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: #fff;
+    color: #1a1a1a;
+    font-weight: 600;
 }
 
 h4 {
-    font-size: 1.1rem;
-    margin: 1.5rem 0 0.5rem;
-    color: #ccc;
+    font-size: 1rem;
+    margin: 1.5rem 0 0.8rem;
+    color: #333;
+    font-weight: 600;
 }
 
 .card {
-    background: #111;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 1.5rem;
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 2rem;
     margin-bottom: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    border-color: #d0d0d0;
 }
 
 .card.success {
-    border-color: #4CAF50;
-    background: #0a2e0a;
+    border-color: #34c759;
+    background: #f0fdf4;
 }
 
 .card.warning {
-    border-color: #ff9800;
-    background: #2e1a00;
+    border-color: #ff9500;
+    background: #fffbf0;
 }
 
 .card ul, .card ol {
     margin-left: 1.5rem;
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
 }
 
 .card li {
-    margin-bottom: 0.5rem;
-    color: #ccc;
+    margin-bottom: 0.7rem;
+    color: #4a4a4a;
 }
 
 .card strong {
-    color: #fff;
+    color: #1a1a1a;
+    font-weight: 600;
 }
 
 pre {
-    background: #000;
-    border: 1px solid #333;
-    border-radius: 4px;
-    padding: 1rem;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 1.2rem;
     overflow-x: auto;
     margin: 1rem 0;
 }
@@ -140,72 +155,82 @@ pre {
 code {
     font-family: 'Space Mono', monospace;
     font-size: 0.85rem;
-    color: #4CAF50;
+    color: #34c759;
 }
 
 blockquote {
-    border-left: 3px solid #fff;
-    padding-left: 1rem;
-    margin: 1rem 0;
+    border-left: 3px solid #1a1a1a;
+    padding-left: 1.2rem;
+    margin: 1.5rem 0;
     font-style: italic;
-    color: #ccc;
+    color: #666;
+    font-size: 1.05rem;
 }
 
 .note {
     color: #888;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
+    font-size: 0.88rem;
+    margin-top: 0.8rem;
 }
 
 .stat {
     font-size: 1.5rem;
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 .number {
-    font-size: 2.5rem;
-    color: #4CAF50;
-    font-weight: bold;
+    font-size: 3rem;
+    color: #34c759;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 .tech-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.6rem;
     margin-top: 1rem;
 }
 
 .tech-tag {
-    background: #222;
-    border: 1px solid #444;
-    padding: 0.5rem 1rem;
+    background: #ffffff;
+    border: 1px solid #d0d0d0;
+    padding: 0.6rem 1.2rem;
     border-radius: 20px;
     font-size: 0.85rem;
-    color: #fff;
+    color: #1a1a1a;
+    font-weight: 500;
+    transition: all 0.15s ease;
+}
+
+.tech-tag:hover {
+    border-color: #1a1a1a;
 }
 
 .copy-docs-btn {
     position: fixed;
-    top: 1rem;
-    right: 1rem;
+    top: 2rem;
+    right: 2rem;
     z-index: 1000;
-    padding: 0.5rem 1rem;
-    background: #333;
-    color: #fff;
-    border: 1px solid #555;
-    border-radius: 4px;
-    font-family: 'Space Mono', monospace;
+    padding: 0.7rem 1.3rem;
+    background: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: all 0.2s ease;
     font-size: 0.9rem;
 }
 
 .copy-docs-btn:hover {
-    background: #444;
-    border-color: #777;
+    background: #333;
     transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .copy-docs-btn:active {
@@ -222,12 +247,17 @@ blockquote {
         height: auto;
         position: relative;
         border-right: none;
-        border-bottom: 1px solid #333;
+        border-bottom: 1px solid #e5e5e5;
+        padding: 1.5rem 1rem;
+    }
+    
+    .sidebar h1 {
+        margin-bottom: 1rem;
     }
     
     .content {
         margin-left: 0;
-        padding: 1rem;
+        padding: 2rem 1.5rem;
     }
     
     .sidebar ul {
@@ -241,7 +271,18 @@ blockquote {
     }
     
     .nav-link {
-        font-size: 0.8rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+        padding: 0.5rem 0.9rem;
+    }
+    
+    .copy-docs-btn {
+        top: 1rem;
+        right: 1rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
     }
 }
