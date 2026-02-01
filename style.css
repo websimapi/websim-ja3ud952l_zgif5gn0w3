@@ -185,6 +185,33 @@ blockquote {
     color: #fff;
 }
 
+.copy-docs-btn {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    padding: 0.5rem 1rem;
+    background: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: all 0.2s;
+    font-size: 0.9rem;
+}
+
+.copy-docs-btn:hover {
+    background: #444;
+    border-color: #777;
+    transform: translateY(-1px);
+}
+
+.copy-docs-btn:active {
+    transform: translateY(0);
+}
+
 @media (max-width: 768px) {
     body {
         flex-direction: column;

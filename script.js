@@ -24,6 +24,49 @@ navLinks.forEach(link => {
     });
 });
 
+// Copy all docs button
+const copyDocsBtn = document.getElementById('copy-docs-btn');
+if (copyDocsBtn) {
+    copyDocsBtn.addEventListener('click', () => {
+        const sections = document.querySelectorAll('.section');
+        let fullText = "SYSTEM DOCUMENTATION\n\n";
+        
+        sections.forEach(sec => {
+            const id = sec.id;
+            // Get section title
+            const title = sec.querySelector('h2')?.textContent || id.toUpperCase();
+            fullText += `\n\n=== ${title} ===\n`;
+            
+            // Get content cards
+            sec.querySelectorAll('.card').forEach(card => {
+                const cardTitle = card.querySelector('h3')?.textContent;
+                if (cardTitle) fullText += `\n[ ${cardTitle} ]\n`;
+                
+                // Get clean text content (clone to avoid modifying DOM)
+                const clone = card.cloneNode(true);
+                // Remove the title from clone so it's not duplicated
+                const h3 = clone.querySelector('h3');
+                if (h3) h3.remove();
+                
+                fullText += clone.textContent.trim() + "\n";
+            });
+        });
+        
+        navigator.clipboard.writeText(fullText).then(() => {
+            const originalText = copyDocsBtn.textContent;
+            copyDocsBtn.textContent = 'Copied!';
+            copyDocsBtn.style.background = '#4CAF50';
+            copyDocsBtn.style.borderColor = '#4CAF50';
+            
+            setTimeout(() => {
+                copyDocsBtn.textContent = originalText;
+                copyDocsBtn.style.background = '';
+                copyDocsBtn.style.borderColor = '';
+            }, 2000);
+        });
+    });
+}
+
 // Highlight code blocks
 document.querySelectorAll('pre code').forEach(block => {
     // Simple syntax highlighting for SEARCH/REPLACE markers
